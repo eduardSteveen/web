@@ -11,7 +11,7 @@ export async function createUser(req, res){
     }catch(error){
         res.status(400)
         res.json(error.message)
-        return
+        return;
     }
     
 
@@ -38,6 +38,7 @@ export async function readUser(req, res){
     res.status(200);
     
 }
+
 export async function updateUser(req, res){
 
     const {id} = req.params;
