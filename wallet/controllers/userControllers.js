@@ -1,8 +1,14 @@
 import userModel from "../models/userModel.js";
+import bcrypt from "bcrypt"
 
 //crae usuario
 export async function createUser(req, res){
     const usuario = req.body;
+    const {contraseña} = usuario
+
+    const contraseñaencriptada = await bcrypt.hash(contraseña,10);
+
+    usuario.contraseña = contraseñaencriptada
 
     let documento = null
 
@@ -22,11 +28,11 @@ export async function createUser(req, res){
 //leer usuario
 export async function readUser(req, res){
 
-    const {nombre} = req.params;
+    const {nombre} = req;
     let documento = null;
 
     try{
-        documento = await userModel.find({"nombre":nombre});
+        documento = await userModel.find({nombre});
     }catch(error){
 
         res.status(400);
@@ -39,22 +45,26 @@ export async function readUser(req, res){
     
 }
 
+//actualizar
 export async function updateUser(req, res){
 
-    const {id} = req.params;
+    const {nombre} = req.params;
+    const {cambios} = req.body
+
     let documento = null;
 
     try{
-        documento = await userModel.findOne({"_id":id});
+        documento = await userModel.updateOne({
+            nombre
+        },
+            cambios,{ runValidators: true}
+        );
     }catch(error){
 
         res.status(400);
         res.json(error.message);
         return;
     }
-
-    documento.edad = 67
-    documento.save();
 
     res.json(documento);
     res.status(200);

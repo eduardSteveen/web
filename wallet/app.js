@@ -1,6 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
+import mwPrueba from "./Middlewares/mwPrueba.js";
 import userRouter from "./routes/userRouter.js";
+import testRouter from "./Routes/testRouter.js";
+import loginRouter from "./Routes/loginRouter.js";
 
 const app = express()
 
@@ -19,4 +22,7 @@ mongoose.connect("mongodb+srv://eduard:eduard@cluster0.cz5cjtl.mongodb.net/inici
 })
 
 app.use(express.json())
+app.use(mwPrueba)
 app.use("/user", userRouter)
+app.use("/login", loginRouter)
+app.use("/test", testRouter)
