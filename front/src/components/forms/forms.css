@@ -1,0 +1,16 @@
+.boton{
+    padding: 0.5rem;
+    border: none;
+    background-color: blue;
+    color: white;
+}
+
+.boton:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.input{
+    text-align: left;
+    
+}
