@@ -1,12 +1,12 @@
 import React from 'react';
 import "./forms.css"
 
-function Boton(props, onClick) {
+function Boton(props) {
 
-    const {children} = props
+    const {children, onClick, type} = props
 
     return (
-        <button className='boton' onClick={onClick}>{children}</button>
+        <button className='boton' onClick={onClick} type={type}>{children}</button>
     );
 }
 

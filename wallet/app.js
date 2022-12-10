@@ -4,10 +4,11 @@ import mwPrueba from "./Middlewares/mwPrueba.js";
 import userRouter from "./routes/userRouter.js";
 import testRouter from "./Routes/testRouter.js";
 import loginRouter from "./Routes/loginRouter.js";
+import cors from "cors"
 
 const app = express()
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8080
 
 app.listen(port, ()=>{
     console.log("El servidor está ejecutandose correctamente.");
@@ -21,6 +22,9 @@ mongoose.connect("mongodb+srv://eduard:eduard@cluster0.cz5cjtl.mongodb.net/inici
     }
 })
 
+app.use(cors({
+    origin:"http://localhost:3000"
+}))
 app.use(express.json())
 app.use(mwPrueba)
 app.use("/user", userRouter)

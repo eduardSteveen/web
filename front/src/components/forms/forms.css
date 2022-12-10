@@ -1,12 +1,12 @@
 .boton{
     padding: 0.5rem;
     border: none;
-    background-color: blue;
+    background-color: rgb(207, 60, 15);
     color: white;
 }
 
 .boton:hover{
-    background-color: red;
+    background-color: rgb(141, 20, 20);
     cursor: pointer;
 }
 

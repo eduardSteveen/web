@@ -1,20 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Boton from "./components/forms/Boton";
 import "./assets/global.css"
-import Flex from './components/utils/Flex';
-import Input from './components/forms/Input';
-import Gap from './components/utils/Gap'
 import Login from './components/Login';
 
 function App() {
-    return (<div>
-       <Login></Login>
+
+    const [contador, setContador] = useState(0);
+
+    function IncrementarContador(){
+        setContador(contador+1)
+    }
+
+
+    return (
+        <div>
+        <Login></Login>
+        <p>Contador: {contador}</p>
+        <Boton onClick={IncrementarContador}>Incrementar Contador</Boton>
        </div>
     );
-}
-
-function saludar(nombre){
-    alert("hola "+nombre)
 }
 
 export default App;
