@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import Boton from './forms/Boton';
-import Input from './forms/Input';
-import Flex from './utils/Flex';
-import Gap from './utils/Gap';
+import Boton from '../components/forms/Boton';
+import Input from '../components/forms/Input';
+import Flex from '../components/utils/Flex';
+import Gap from '../components/utils/Gap';
 
 function Login() {
 
@@ -39,8 +39,8 @@ function Login() {
                 <Gap direction="vertical">0.5rem</Gap>
                 <Input type="password" onChange={(val)=>setPassword(val.target.value)}>password</Input>
                 <Gap direction="vertical">3rem</Gap>
-            <Boton type="submit">login</Boton>
-        </Flex>
+                <Boton type="submit">login</Boton>
+            </Flex>
         </form>
     );
 }

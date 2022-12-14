@@ -1,6 +1,9 @@
-.flex{
-    background-color: rgb(192, 186, 179);
+.flex {
+    background-color: rgb(218, 218, 218);
     display: flex;
-    flex-direction:column;
-    gap: 20px;
+    flex-direction: column;
+}
+
+.container {
+    margin: 0 auto;
 }
