@@ -1,8 +1,33 @@
-.boton{
-    padding: 0.5rem;
-    border: none;
-    background-color: rgb(207, 60, 15);
+.wire-button, .fill-button{
+    font-weight: bold;
+    padding: 0.5rem 2.5rem;
+    border-radius: calc(infinity * 1px);
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.wire-button{
+    background-color: transparent;
+    border: solid;
+}
+
+.wire-button:hover{
+    background-color: var(--main-color);
     color: white;
+    border: none;
+}
+
+.fill-button{
+    background-color: var(--enf-color);
+    border: none;
+    color: white;
+}
+
+.wire-button:hover{
+    background-color: var(--main-color);
+    color: white;
+    border: none;
 }
 
 .boton:hover{
@@ -12,5 +37,6 @@
 
 .input{
     text-align: left;
-    
+    border: none;
+    padding: 0.2rem;
 }
